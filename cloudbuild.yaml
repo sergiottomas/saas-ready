@@ -1,0 +1,3 @@
+steps:
+  - name: 'gcr.io/saas-ready/firebase'
+    args: ['deploy', '--project=saas-ready', '--only=hosting']
