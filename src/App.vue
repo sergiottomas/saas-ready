@@ -1,23 +1,34 @@
 <template>
-  <div id="app">
+  <component id="app" :is="layout">
     <router-view></router-view>
-  </div>
+  </component>
 </template>
 
 <script>
+const defaultLayout = "default-layout";
 
 export default {
-  name: 'App',
-}
+  name: "App",
+  computed: {
+    layout() {
+      return this.$route.meta.layout ? this.$route.meta.layout : defaultLayout;
+    },
+  },
+};
 </script>
 
 <style>
+html,
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+#app > footer {
+  margin-top: auto;
+}
+#app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

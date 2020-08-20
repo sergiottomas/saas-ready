@@ -9,7 +9,10 @@ import NotFound from "@/pages/NotFound";
 const routes = [
     {
         path: '/',
-        name: "home",
+				name: "home",
+				meta: {
+					layout: "primary-layout"
+				},
         component: Home
     },
     {
