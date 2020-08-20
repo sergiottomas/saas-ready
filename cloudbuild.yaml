@@ -4,6 +4,6 @@ steps:
     args: ['install']
   - name: node,
     entrypoint: npm
-    args: ['run build']
+    args: ['run', 'build']
   - name: 'gcr.io/saas-ready/firebase'
     args: ['deploy', '--project=saas-ready', '--only=hosting']
